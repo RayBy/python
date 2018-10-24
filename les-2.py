@@ -1,5 +1,6 @@
 import os
 import psutil
+import sys
 
 name = input ("Введите имя: ")
 print ("Привет, " + name)
@@ -15,7 +16,11 @@ if work == 'да':
     if do == 1:
         print (os.listdir())
     elif do == 2:
-        pass
+        print("Текущая директория - " + os.getcwd())
+        print("Название платформы - " + sys.platform)
+        print("Кодировка - " + sys.getfilesystemencoding())
+        print("Логин текущего пользователя - " + os.getlogin())
+        print("Количество ядер CPU - " + str(psutil.cpu_count()))
     elif do == 3:
         print (psutil.pids())
     else:
