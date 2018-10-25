@@ -34,6 +34,12 @@ def sys_info():
     print("Кодировка - ", sys.getfilesystemencoding())
     print("Логин текущего пользователя - ", os.getlogin())
     print("Количество ядер CPU - ", str(psutil.cpu_count()))
+def dupl_all(dirname):
+    file_list = os.listdir(dirname)
+    i = 0
+    while i < len(file_list):
+        duplicate(file_list[i])
+        i += 1
 
 def main():
     print ("# Вы запустили робота-помощника #")
@@ -64,6 +70,7 @@ def main():
                 print("[1] - Вывести список файлов текущей директории")
                 print("[2] - Создать копию выбранного файла")
                 print("[3] - Удалить копии файлов в директории указанной пользователем")
+                print("[4] - Создать копию всех фалов вдиректории")
                 file = int(input("Укажите номер действия: "))
                 if file == 1:
                     print("# Список файлов в текущей директории #")
@@ -76,6 +83,9 @@ def main():
                     print("# Удаление дубликатов файлов из выбранной директории #")
                     dir_name = input("Укажите имя директории: ")
                     del_duplicate(dir_name)
+                elif file == 4:
+                    print("# Создание дубликатов всех файлов в директории #")
+                    dupl_all()
                 else:
                     print("Недопустимое действие")
             else:

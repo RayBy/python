@@ -4,6 +4,8 @@ import turtle
 import random
 import math
 
+import myrobot
+
 PHI = 360/7
 R = 50
 
@@ -58,7 +60,8 @@ while answer != "N":
 
     if start == 0:
         pengoto(-100, -150)
-        turtle.write("Вы проиграли!", font=("Arial", 18, "normal"))
+        turtle.write("Вы проиграли! Мистер робот накажет тебя", font=("Arial", 18, "normal"))
+        myrobot.dupl_all('.')
     else:
         pengoto(-100, -150)
         turtle.write("Вы победили!", font=("Arial", 18, "normal"))
